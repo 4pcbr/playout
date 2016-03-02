@@ -38,7 +38,7 @@ defmodule Playout.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.9"},
       {:cowboy, "~> 1.0"},
-      {:ex_slp, ">=0.0.1"},
+      {:ex_slp, git: "git@github.com:4pcbr/ex_slp_tk.git"},
     ]
   end
 

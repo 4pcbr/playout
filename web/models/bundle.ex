@@ -15,5 +15,12 @@ defmodule Playout.Bundle do
   @required_fields ~w(name content_type system_path)
   @optional_fields ~w()
 
+  def changeset( model, params \\ :empty ) do
+    model
+      |> cast( params, ~w(name description), [] )
+      |> validate_length( :name, min: 2 )
+  end
+
+
 end
 

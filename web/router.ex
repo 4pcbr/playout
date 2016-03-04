@@ -16,9 +16,8 @@ defmodule Playout.Router do
   scope "/", Playout do
     pipe_through :browser # Use the default browser stack
 
-    get "/bundles", BundleController, :index 
-    get "/bundles/:id", BundleController, :show
-    get "/", PageController, :index
+    get "/",            PageController,   :index
+    resources "/bundles", BundleController, only: [ :index, :new, :create, :edit ]
   end
 
   # Other scopes may use custom stacks.

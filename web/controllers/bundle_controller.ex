@@ -12,6 +12,12 @@ defmodule Playout.BundleController do
     render conn, "new.html", changeset: changeset
   end
 
+  def edit( conn, %{ "id" => id } ) do
+    bundle = Repo.get( Bundle, id )
+    changeset = Bundle.changeset( bundle )
+    render conn, "edit.html", bundle: bundle
+  end
+
   def create( conn, %{ "bundle" => bundle_params } ) do
     changeset = Bundle.changeset( %Bundle{}, bundle_params )
     case Repo.insert( changeset ) do

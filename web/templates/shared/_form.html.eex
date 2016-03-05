@@ -1,0 +1,17 @@
+<%= form_for @changeset, bundle_path( @conn, :create ), [ multipart: true ], fn f -> %>
+  <div class="form-group">
+    <%= text_input f, :name, placeholder: "Name", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= text_input f, :description, placeholder: "Description", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= select f, :content_type, ~w(html video image pdf), class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= file_input f, :file,  class: "form-control", multiple: true %>
+  </div>
+  <div class="form-group">
+    <%= submit "Create bundle", class: "btn btn-promary" %>
+  </div>
+<% end %>

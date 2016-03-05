@@ -17,7 +17,7 @@ defmodule Playout.Bundle do
 
   def changeset( model, params \\ :empty ) do
     model
-      |> cast( params, ~w(name description), [] )
+      |> cast( params, ~w(name description content_type), [] )
       |> validate_length( :name, min: 2 )
   end
 

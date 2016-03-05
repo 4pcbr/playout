@@ -1,5 +1,7 @@
 <h1>bundles</h1>
 
+<a href="<%= bundle_path( @conn, :new ) %>" class="btn btn-primary">New</a>
+
 <table class="table">
   <%= for bundle <- @bundles do %>
     <tr>

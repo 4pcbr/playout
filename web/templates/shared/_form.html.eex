@@ -9,9 +9,9 @@
     <%= select f, :content_type, ~w(html video image pdf), class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= file_input f, :file,  class: "form-control", multiple: true %>
+    <%= file_input f, :file,  class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= submit "Create bundle", class: "btn btn-promary" %>
+    <%= submit "Create bundle", class: "btn btn-primary" %>
   </div>
 <% end %>

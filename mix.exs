@@ -39,6 +39,7 @@ defmodule Playout.Mixfile do
       {:gettext, "~> 0.9"},
       {:cowboy, "~> 1.0"},
       {:ex_slp, git: "git@github.com:4pcbr/ex_slp_tk.git"},
+      {:arc, "~> 0.5.1"},
     ]
   end
 

@@ -19,9 +19,9 @@ defmodule Playout.BundleController do
   end
 
   def update( conn, %{ "id" => id, "bundle" => bundle_params } ) do
-    bundle = Repo.get( Bundle, id )
-    bundle = Bundle.changeset.change bundle, bundle_params
-    case Repo.update bundle do
+    bundle = Repo.get!( Bundle, id )
+    changeset = Bundle.changeset( bundle, bundle_params )
+    case Repo.update changeset do
       { :ok, model } ->
         conn
           |> put_flash( :info, "#{bundle.name} upated!" )

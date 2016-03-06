@@ -40,6 +40,7 @@ defmodule Playout.Mixfile do
       {:cowboy, "~> 1.0"},
       {:ex_slp, git: "git@github.com:4pcbr/ex_slp_tk.git"},
       {:arc, "~> 0.5.1"},
+      {:arc_ecto, "~> 0.3.2"},
     ]
   end
 

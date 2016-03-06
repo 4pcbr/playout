@@ -7,7 +7,7 @@ defmodule Playout.Repo.Migrations.CreateBundle do
       add :name,         :string, null: false
       add :description,  :string
       add :content_type, :string
-      add :system_path,  :string
+      add :file,         :string
 
       timestamps
     end

@@ -1,8 +1,8 @@
-defmodule Playout.Bundle do
+defmodule Playout.BundleFile do
   use Arc.Definition
 
   # Include ecto support (requires package arc_ecto installed):
-  # use Arc.Ecto.Definition
+  use Arc.Ecto.Definition
 
   @versions [:original]
 
@@ -42,4 +42,16 @@ defmodule Playout.Bundle do
   # def s3_object_headers(version, {file, scope}) do
   #   [content_type: Plug.MIME.path(file.file_name)]
   # end
+
+  def __changeset, do: Arc.Storage.Local
+
+  def filename( version, { file, scope } ) do
+    "#{version}-#{file.file_name}"
+  end
+
+  def storage_dir( version, scope ) do
+    IO.inspect scope
+    "/uploads/content/#{scope.id}"
+  end
+
 end

@@ -13,6 +13,7 @@ defmodule Playout do
       supervisor(Playout.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(Playout.Worker, [arg1, arg2, arg3]),
+      supervisor(Playout.Discovery, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

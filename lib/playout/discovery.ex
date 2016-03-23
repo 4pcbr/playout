@@ -2,7 +2,7 @@ defmodule Playout.Discovery do
 
   alias ExSlp.Service
 
-  if Mix.env == :dev do
+  if Mix.env == :test do
     @slp_args [ u: "127.0.0.1" ]
   else
     @slp_args []

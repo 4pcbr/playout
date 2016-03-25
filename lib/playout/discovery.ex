@@ -55,11 +55,7 @@ defmodule Playout.Discovery do
   end
 
   defp ensure_connnected( services ) do
-    service_map = services
-      |> Enum.map( fn service ->
-        { service, true }
-      end ) |> Enum.into(%{})
-    IO.inspect service_map
+    update( services )
   end
 
 end

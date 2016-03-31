@@ -13,6 +13,11 @@ defmodule Playout.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", Playout do
+    pipe_through :api
+    resources "/nodes", NodeController
+  end
+
   scope "/", Playout do
     pipe_through :browser
     get "/",            PageController,   :index
